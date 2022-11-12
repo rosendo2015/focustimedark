@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;    
+}
+html{
+    --bg-page: #fff;
+    --bg-button: #E1E1E6;
+    --bg-button-active:  #02799D;
+    --boxShadow-button: #c0c0c0;
+    --svg-control: #323238;
+    --svg-control-active:  #02799D;
+    --svg-button-active: #fff;
+    --svg-button: #323238;
+    --text-color: #323238;
+    --input-color: #323238;
+}
+.dark {
+    --bg-page: #000;
+    --bg-button: #29292E;
+    --bg-button-active:  #02799D;
+    --boxShadow-button: #c0c0c0;
+    --svg-control: #fff;
+    --svg-control-active:  #fff;
+    --svg-button-active: #fff;
+    --svg-button: #fff;
+    --text-color: #fff;
+    --input-color: #fff;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--bg-page);
+}
+
+main {
+    
+    padding: clamp(4rem, 8rem + 10vw, 10rem);
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    width: fit-content;    
+}
+
+.display-timer {
+    margin: 0 auto;
+}
+
+.timer,
+.wrapper-buttons {
+
+    min-width: 321px;
+    height: 230px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.timer span {
+color: var(--text-color);
+    font-size: 11rem;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14.8rem;
+}
+
+.controls {
+    margin: 0 auto;
+    max-width: 312px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+
+}
+
+.hide {
+    display: none;
+}
+
+.wrapper-buttons {
+    
+    width: fit-content;
+    height: 100%;
+    display: grid;
+    grid-gap: 32px;
+    align-items: center;
+    justify-content: center;
+    grid-template-areas: "A B"
+        "C D";
+}
+
+.button {
+    cursor: pointer;
+    transition: all 1s;
+    box-shadow: 2px 2px 3px 1px var(--boxShadow-button);
+}
+
+
+.wrapper-buttons>div:nth-child(1) {
+    grid-area: A;
+
+}
+
+.wrapper-buttons>div:nth-child(2) {
+    grid-area: B;
+
+}
+
+.wrapper-buttons>div:nth-child(3) {
+    grid-area: C;
+}
+
+.wrapper-buttons>div:nth-child(4) {
+    grid-area: D;
+}
+
+.button {
+    position: relative;
+    background-color: var(--bg-button);
+    width: fit-content;
+    height: 150px;
+    border-radius: 2.4rem;
+    background-color: var(--bg-button);    
+   
+}
+.floresta,
+.nuvem,
+.fogo,
+.cafeteria{    
+    padding: 50px;
+    height: 150px;
+    border-radius: 2.4rem;
+}
+.wrapper-volume{
+    border-radius: 0 0 2.4rem 2.4rem;
+    padding: 50;
+    
+    top: 120px;
+    position:absolute;
+    bottom: 2.4rem;
+    left: 2.4rem;  
+    width: 9rem;
+    
+  
+    
+}
+input {
+    z-index: 99;
+    width: 9rem;
+    appearance: none;
+    outline: none;
+    background:var(--input-color);
+    border-radius: 5px;
+    height: 4px; 
+    
+    
+}
+
+input::-webkit-slider-thumb {
+    appearance: none;
+    display: block;
+    height:16px;
+    width: 16px;
+    background:var(--input-color);
+    border-radius: 50%;
+    cursor: grab;
+     
+    
+}
+.button.active{
+    
+    background-color: var(--bg-button-active);
+}
+
+.floresta.active,
+.nuvem.active,
+.cafeteria.active,
+.fogo.active {
+    background-color: var(--bg-button-active);
+}
+
+.pause svg path,
+.play svg path,
+.stop svg path,
+.plusFive svg path,
+.minusFive svg path {
+    fill: var(--svg-control);
+}
+.pause.active svg path,
+.play.active svg path,
+.stop.active svg path,
+.plusFive.active svg path,
+.minusFive.active svg path {
+    fill: var(--svg-control-active);
+}
+
+.floresta.active svg path,
+.nuvem.active svg path,
+.cafeteria.active svg path,
+.fogo.active svg path {
+    fill: var(--svg-button-active);
+}
+.floresta svg path,
+.nuvem svg path,
+.cafeteria svg path,
+.fogo svg path {
+    fill: var(--svg-button);
+}
+
+.temas{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 6.4rem;
+}
+
+
+@media (min-width: 768px) {
+
+    .container {
+        display: flex;
+        gap: 58px;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        margin: 0 auto;
+
+    }
+
+    .container .controls {
+        width: fit-content;
+    }
+
+
+    .container .timer {
+        width: 335px;
+    }
+
+    .timer span {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12.6166rem;
+        line-height: 14.8rem;
+    }
+}
