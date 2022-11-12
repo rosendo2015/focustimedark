@@ -1,6 +1,6 @@
 # Exercício 04 do nível 05 - Focus Timer 2.0 Dark
 
-![preview](./.github/preview.jpg)
+![preview](./github/preview.jpg)
 
 > <b>Trilha Explorer </b>
 
